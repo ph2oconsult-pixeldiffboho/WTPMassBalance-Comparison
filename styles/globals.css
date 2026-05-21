@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,600;8..60,700&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --paper: #F7F4ED;
+  --paper-dark: #EFEAE0;
+  --ink-900: #0E1116;
+  --ink-800: #1A1F26;
+  --ink-700: #2B313A;
+  --ink-500: #5A6270;
+  --ink-300: #9AA2B0;
+  --rust: #B0451F;
+  --ochre: #C8961A;
+  --sage: #5A7359;
+  --slate: #3F5870;
+}
+
+html, body {
+  background: var(--paper);
+  color: var(--ink-900);
+  font-family: 'Inter Tight', system-ui, sans-serif;
+  font-feature-settings: 'ss01', 'cv11';
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Source Serif 4', Georgia, serif;
+  letter-spacing: -0.01em;
+}
+
+.font-display {
+  font-family: 'Source Serif 4', Georgia, serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+.rule {
+  height: 1px;
+  background: var(--ink-700);
+  width: 100%;
+}
+
+.rule-thin {
+  height: 0.5px;
+  background: var(--ink-300);
+}
+
+.rule-thick {
+  height: 2px;
+  background: var(--ink-900);
+}
+
+.fig-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-500);
+}
+
+.eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-700);
+}
+
+input[type="number"], input[type="text"], select {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--ink-300);
+  padding: 4px 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: var(--ink-900);
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+input[type="number"]:focus, input[type="text"]:focus, select:focus {
+  border-bottom-color: var(--rust);
+}
+
+button.primary {
+  background: var(--ink-900);
+  color: var(--paper);
+  padding: 10px 20px;
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  font-size: 13px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+button.primary:hover {
+  background: var(--rust);
+}
+
+button.ghost {
+  background: transparent;
+  border: 1px solid var(--ink-700);
+  color: var(--ink-900);
+  padding: 8px 16px;
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+button.ghost:hover {
+  background: var(--ink-900);
+  color: var(--paper);
+}
+
+.tab {
+  padding: 12px 0;
+  margin-right: 32px;
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--ink-500);
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.tab.active {
+  color: var(--ink-900);
+  border-bottom-color: var(--rust);
+}
+
+.tab:hover {
+  color: var(--ink-900);
+}
+
+.dropcap::first-letter {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 4.5em;
+  line-height: 0.85;
+  float: left;
+  padding-right: 8px;
+  padding-top: 4px;
+  font-weight: 700;
+  color: var(--rust);
+}
+
+table.data {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+}
+
+table.data th {
+  text-align: left;
+  padding: 8px 12px 8px 0;
+  border-bottom: 1px solid var(--ink-900);
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-700);
+  font-weight: 600;
+}
+
+table.data td {
+  padding: 6px 12px 6px 0;
+  border-bottom: 0.5px solid var(--ink-300);
+  color: var(--ink-900);
+}
+
+table.data td.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+table.data tr:hover td {
+  background: var(--paper-dark);
+}
+
+.pass {
+  color: var(--sage);
+  font-weight: 600;
+}
+
+.fail {
+  color: var(--rust);
+  font-weight: 600;
+}
+
+.warn {
+  color: var(--ochre);
+  font-weight: 600;
+}
+
+.scroll-soft {
+  scrollbar-width: thin;
+  scrollbar-color: var(--ink-300) transparent;
+}
+
+.scroll-soft::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+.scroll-soft::-webkit-scrollbar-thumb {
+  background: var(--ink-300);
+  border-radius: 3px;
+}
+
+@media print {
+  body { background: white; }
+  .no-print { display: none !important; }
+  .print-break { page-break-before: always; }
+}
